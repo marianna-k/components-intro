@@ -11,6 +11,7 @@ import Layout from "./components/Layout.tsx";
 import Counter from "./components/Counter.tsx";
 import NameChanger from "./components/NameChanger.tsx";
 import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
+import CounterAdvanced from "./components/CounterAdvanced.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -29,9 +30,10 @@ function App() {
             {/*<ClassComponentWithState />*/}
             {/*<FunctionalComponentWithState />*/}
             <Camera color="green" size={48} />
-            <Counter/>
-            <NameChanger />
-            <CounterWithMoreStates />
+            {/*<Counter/>*/}
+            {/*<NameChanger />*/}
+            {/*<CounterWithMoreStates />*/}
+            <CounterAdvanced />
         </Layout>
 
     </>
