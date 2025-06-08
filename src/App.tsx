@@ -14,6 +14,7 @@ import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 import CounterAdvanced from "./components/CounterAdvanced.tsx";
 import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
 import CounterWithReducer from "./components/CounterWithReducer.tsx";
+import Todo from "./components/todo/Todo.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -41,7 +42,9 @@ function App() {
 
             {/*<CounterWithReducer />*/}
 
-            <CounterWithReducer />
+            {/*<CounterWithReducer />*/}
+
+            <Todo />
         </Layout>
 
     </>
