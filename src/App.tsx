@@ -15,6 +15,7 @@ import CounterAdvanced from "./components/CounterAdvanced.tsx";
 import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
 import CounterWithReducer from "./components/CounterWithReducer.tsx";
 import Todo from "./components/todo/Todo.tsx";
+import OnlineStatus from "./components/OnlineStatus.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -34,7 +35,7 @@ function App() {
             {/*<FunctionalComponentWithState />*/}
             <Camera color="green" size={48} />
             {/*<Counter/>*/}
-            {/*<NameChanger />*/}
+            <NameChanger />
             {/*<CounterWithMoreStates />*/}
             {/*<CounterAdvanced />*/}
 
@@ -45,6 +46,8 @@ function App() {
             {/*<CounterWithReducer />*/}
 
             <Todo />
+
+            <OnlineStatus />
         </Layout>
 
     </>
