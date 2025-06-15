@@ -73,6 +73,7 @@ function App() {
                         <Route path= "online-status" element={<OnlineStatusPage />} />
                     </Route>
 
+                    {/*run below code in browser as: users/12 */}
                     <Route path ="users/:userId" element ={<UserPage />} />
                     {/*path parameter*/}
                     {/*example.com/users/12*/}
