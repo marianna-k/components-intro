@@ -5,7 +5,7 @@
 // import ArrowFunctionalComponentWpropsTypes from "./components/ArrowFunctionalComponentWpropsTypes.tsx";
 
 // import CodingFactoryLogo from "./components/CodingFactoryLogo.tsx";
-import { Camera } from 'lucide-react';
+// import {Camera} from 'lucide-react';
 import Layout from "./components/Layout.tsx";
 // import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 import Counter from "./components/Counter.tsx";
@@ -16,6 +16,11 @@ import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCusto
 import CounterWithReducer from "./components/CounterWithReducer.tsx";
 import Todo from "./components/todo/Todo.tsx";
 import OnlineStatus from "./components/OnlineStatus.tsx";
+import {BrowserRouter, Routes, Route} from "react-router";
+import HomePage from "./pages/HomePage.tsx";
+import NameChangerPage from "./pages/NameChangerPage.tsx";
+import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
+import UserPage from "./pages/UserPage.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -28,14 +33,14 @@ function App() {
         {/*<ArrowFunctionalComponentWProps title ="Is an Arrow functional component with props" />*/}
         {/*<ArrowFunctionalComponentWpropsTypes title= "title"  description = "desc" />*/}
       {/*<CodingFactoryLogo />*/}
-        <Layout>
-            <h1 className="text-center text-2xl font-bold">This is a title</h1>
+      {/*  <Layout>*/}
+      {/*      <h1 className="text-center text-2xl font-bold">This is a title</h1>*/}
             {/*<FunctionalComponent />*/}
             {/*<ClassComponentWithState />*/}
             {/*<FunctionalComponentWithState />*/}
-            <Camera color="green" size={48} />
+            {/*<Camera color="green" size={48} />*/}
             {/*<Counter/>*/}
-            <NameChanger />
+            {/*<NameChanger />*/}
             {/*<CounterWithMoreStates />*/}
             {/*<CounterAdvanced />*/}
 
@@ -45,10 +50,42 @@ function App() {
 
             {/*<CounterWithReducer />*/}
 
-            <Todo />
+        {/*    <Todo />*/}
 
-            <OnlineStatus />
-        </Layout>
+        {/*    <OnlineStatus />*/}
+        {/*</Layout>*/}
+
+        <BrowserRouter>
+            <Layout>
+                <Routes>
+                        // / index page
+                        <Route path="/" element={<HomePage />} />
+                        //alternative of index page
+                         {/*<Route index element={<HomePage />} />*/}
+                        {/*<Route path ="example/name-changer" element={<NameChangerPage />} />*/}
+                        {/*<Route path ="example/online-status" element={<NameChangerPage />} />*/}
+
+                    //alternative way of declaring the above Route paths
+
+                    //we could also add a ? next to examples so as to make path optional
+                    <Route path ="examples">
+                        <Route path= "name-changer" element={<NameChangerPage />} />
+                        <Route path= "online-status" element={<OnlineStatusPage />} />
+                    </Route>
+
+                    <Route path ="users/:userId" element ={<UserPage />} />
+                    {/*path parameter*/}
+                    {/*example.com/users/12*/}
+                    {/*query parameter*/}
+                    {/*example.com/users?id=12*/}
+
+                    //alternative way of declaring the above Route paths
+                    //path is optional ?, can be also called using examples/name-changer or just simple name-changer without examples in front
+                    {/*<Route path ="examples?/name-changer" element={<NameChangerPage />} />*/}
+                </Routes>
+            </Layout>
+        </BrowserRouter>
+
 
     </>
   )
