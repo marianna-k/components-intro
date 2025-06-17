@@ -1,6 +1,9 @@
-import {useEffect, useState} from "react";
+import {useEffect,  useState} from "react";
 
 const NameChanger = () => {
+
+    // const ref = useRef(0); //initial value
+    // ref.current =0;
 
     const [name, setName] = useState(''); //initial value  of name:  empty
     //depending on the field type you add the relevant HTML Element in parentheses. here is HTMLInputElement

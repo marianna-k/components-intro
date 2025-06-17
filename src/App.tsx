@@ -26,6 +26,7 @@ import ExamplePage from "./pages/ExamplesPage.tsx";
 import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
+import FocusInput from "./components/FocusInput.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -65,7 +66,8 @@ function App() {
                 <Routes>
                     <Route element = {<RouterLayout />} >
                         // / index page
-                        <Route path="/" element={<HomePage />} />
+                        {/*<Route path="/" element={<HomePage />} />*/}
+                        <Route index element ={<FocusInput />} />
                     </Route>
 
                         //alternative of index page
@@ -102,6 +104,7 @@ function App() {
                     //alternative way of declaring the above Route paths
                     //path is optional ?, can be also called using examples/name-changer or just simple name-changer without examples in front
                     {/*<Route path ="examples?/name-changer" element={<NameChangerPage />} />*/}
+
 
                 {/*    at the end of all routes we create a path to declare errors. * indicates to catch all paths */}
                 {/*    it needs to be placed at the end due to priority of the rest of the pages*/}
