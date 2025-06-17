@@ -4,7 +4,6 @@ import {useParams} from "react-router";
 const UserPage = () => {
     const {userId} = useParams();
 
-
     useEffect(() => {
         document.title = `CF7 User id 12 ${userId}`;
     }, [userId]);

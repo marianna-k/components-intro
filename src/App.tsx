@@ -21,6 +21,11 @@ import HomePage from "./pages/HomePage.tsx";
 import NameChangerPage from "./pages/NameChangerPage.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
 import UserPage from "./pages/UserPage.tsx";
+import RouterLayout from "./components/RouterLayout.tsx";
+import ExamplePage from "./pages/ExamplesPage.tsx";
+import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
+import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -56,10 +61,13 @@ function App() {
         {/*</Layout>*/}
 
         <BrowserRouter>
-            <Layout>
+            {/*<Layout>*/}
                 <Routes>
+                    <Route element = {<RouterLayout />} >
                         // / index page
                         <Route path="/" element={<HomePage />} />
+                    </Route>
+
                         //alternative of index page
                          {/*<Route index element={<HomePage />} />*/}
                         {/*<Route path ="example/name-changer" element={<NameChangerPage />} />*/}
@@ -68,23 +76,38 @@ function App() {
                     //alternative way of declaring the above Route paths
 
                     //we could also add a ? next to examples so as to make path optional
-                    <Route path ="examples">
+                    <Route path ="examples" element ={<RouterExamplesLayout />}>
+                        {/*we are in index of /examples*/}
+                        <Route index element = {<ExamplePage />} />
                         <Route path= "name-changer" element={<NameChangerPage />} />
                         <Route path= "online-status" element={<OnlineStatusPage />} />
+                        <Route path ="auto-redirect" element ={<AutoRedirectPage />} />
                     </Route>
 
                     {/*run below code in browser as: users/12 */}
+                    <Route path ="users" element ={<UserPage />} />
                     <Route path ="users/:userId" element ={<UserPage />} />
+
+                    {/*asking for a file*/}
+                    {/*<Route path ="files/*" element={<FilePage />} />*/}
+                    //how to read the file in a component page
+                    {/*const params = useParams();*/}
+                    {/*const filePath = params ["*"];*/}
+
                     {/*path parameter*/}
-                    {/*example.com/users/12*/}
+                    {/*example.com/users/12/name/Nick*/}
                     {/*query parameter*/}
-                    {/*example.com/users?id=12*/}
+                    {/*example.com/users?id=12&name=Nick*/}
 
                     //alternative way of declaring the above Route paths
                     //path is optional ?, can be also called using examples/name-changer or just simple name-changer without examples in front
                     {/*<Route path ="examples?/name-changer" element={<NameChangerPage />} />*/}
+
+                {/*    at the end of all routes we create a path to declare errors. * indicates to catch all paths */}
+                {/*    it needs to be placed at the end due to priority of the rest of the pages*/}
+                    <Route path ="*" element ={<NotFoundPage />} />
                 </Routes>
-            </Layout>
+            {/*</Layout>*/}
         </BrowserRouter>
 
 
