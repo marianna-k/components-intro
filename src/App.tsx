@@ -27,6 +27,7 @@ import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import FocusInput from "./components/FocusInput.tsx";
+import MultifieldForm from "./components/MultifieldForm.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -67,7 +68,8 @@ function App() {
                     <Route element = {<RouterLayout />} >
                         // / index page
                         {/*<Route path="/" element={<HomePage />} />*/}
-                        <Route index element ={<FocusInput />} />
+                        {/*<Route index element ={<FocusInput />} />*/}
+                        <Route index element = {<MultifieldForm />} />
                     </Route>
 
                         //alternative of index page
@@ -80,7 +82,8 @@ function App() {
                     //we could also add a ? next to examples so as to make path optional
                     <Route path ="examples" element ={<RouterExamplesLayout />}>
                         {/*we are in index of /examples*/}
-                        <Route index element = {<ExamplePage />} />
+                        {/*<Route index element = {<ExamplePage />} />*/}
+
                         <Route path= "name-changer" element={<NameChangerPage />} />
                         <Route path= "online-status" element={<OnlineStatusPage />} />
                         <Route path ="auto-redirect" element ={<AutoRedirectPage />} />
@@ -108,7 +111,7 @@ function App() {
 
                 {/*    at the end of all routes we create a path to declare errors. * indicates to catch all paths */}
                 {/*    it needs to be placed at the end due to priority of the rest of the pages*/}
-                    <Route path ="*" element ={<NotFoundPage />} />
+                {/*    <Route path ="*" element ={<NotFoundPage />} />*/}
                 </Routes>
             {/*</Layout>*/}
         </BrowserRouter>
