@@ -73,6 +73,7 @@ const handleClear = () => {
                          value={values.message}
                placeholder="Type your Message"
                          onChange ={handleChange}
+                         minLength={5}
                required>
                </textarea>
 
