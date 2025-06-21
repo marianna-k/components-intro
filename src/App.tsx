@@ -28,6 +28,8 @@ import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import FocusInput from "./components/FocusInput.tsx";
 import MultifieldForm from "./components/MultifieldForm.tsx";
+import MultifieldFormWithValidation from "./components/MultifieldFormWithValidation.tsx";
+import MultifieldFormWithZodValidation from "./components/MultifieldFormWithZodValidation.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
@@ -69,7 +71,9 @@ function App() {
                         // / index page
                         {/*<Route path="/" element={<HomePage />} />*/}
                         {/*<Route index element ={<FocusInput />} />*/}
-                        <Route index element = {<MultifieldForm />} />
+                        {/*<Route index element = {<MultifieldForm />} />*/}
+                        {/*<Route index element = {<MultifieldFormWithValidation />} />*/}
+                        <Route index element = {<MultifieldFormWithZodValidation />} />
                     </Route>
 
                         //alternative of index page
